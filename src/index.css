@@ -1,0 +1,328 @@
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top:60px;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Titles */
+h1 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 20px;
+  margin-top: 150px;
+}
+
+/* Articles List */
+.articles-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.article-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.article-card:hover {
+  transform: translateY(-8px);
+}
+
+.article-card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.article-card a:hover {
+  color: #0056b3;
+}
+.article-image {
+  width: 100%; /* Makes the image responsive */
+  height: auto;
+  border-radius: 8px; /* Optional: Rounded corners for the image */
+  object-fit: cover; /* Ensures the image covers the container */
+  margin-bottom: 15px; /* Space between image and other content */
+}
+.article-content {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+
+/* Comments Section */
+.comment-section {
+  width: 70%;
+  margin-top:900px;
+  margin-left:200px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Comments List */
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-item {
+  background: #f9f9f9;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comment-actions {
+  margin-top: 10px;
+}
+
+.comment-actions button {
+  padding: 8px 12px;
+  margin-right: 5px;
+}
+
+/* Delete Button */
+.comment-actions .delete {
+  background-color: #dc3545;
+}
+
+.comment-actions .delete:hover {
+  background-color: #a71d2a;
+}
+
+.comment-item {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.comment-item.removed {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+
+@media (max-width: 600px) {
+  .articles-list {
+    grid-template-columns: 1fr; /* Un seul article par ligne sur petits écrans */
+    gap: 10px; /* Réduit l'espace entre les articles */
+    padding: 10px;
+  }
+
+  .article-card {
+    padding: 15px; /* Un peu moins de padding pour économiser de l'espace */
+    font-size: 14px; /* Réduction légère de la taille du texte */
+  }
+
+  .article-card a {
+    font-size: 16px; /* Ajustement du lien */
+  }
+}
+ /* Barre de recherche */
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacement entre les éléments */
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Select (tri des articles) */
+.search-container select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-container select:hover {
+  border-color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+  }
+
+  .search-container input,
+  .search-container select {
+    width: 80%;
+    max-width: 300px;;
+  }
+}
+
+
+
+/* Navbar container */
+.navbar {
+  position:fixed;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #6b11cb25 0%, #2575fc 100%); /* Gradient background */
+  padding:20px;
+  margin-top:10px;
+  margin-right:1000px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border-radius: 8px; /* Rounded corners */
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Title styling */
+.navbar-title {
+  font-size: 28px;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+  margin-top: -10px;
+  margin-left:10px;
+}
+
+/* Navbar list */
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Space between links */
+  margin-top:-20px;
+  margin-left:10px;
+}
+
+/* Individual navbar items */
+.navbar-item {
+  position: relative;
+}
+
+/* Styling links */
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+
+  padding: 5px 17px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on links */
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light hover background */
+  transform: translateY(-4px); /* Slight lift effect */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .navbar-item {
+    width: auto;
+  }
+
+  .navbar-link {
+    display: block;
+    width: auto;
+    padding: 12px 20px;
+    border-radius: 8px;
+  }
+  .navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
